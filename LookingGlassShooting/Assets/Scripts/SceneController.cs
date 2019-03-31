@@ -9,7 +9,6 @@ public class SceneController : MonoBehaviour
 
     void Start()
     {
-        ShowCharacterSelect();
     }
 
     void Update()
