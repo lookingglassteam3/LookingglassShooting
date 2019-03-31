@@ -60,6 +60,7 @@ GameObject:
   - component: {fileID: 8799009657197126099}
   - component: {fileID: 8799009657197126098}
   - component: {fileID: 8799009657802785728}
+  - component: {fileID: 24084980}
   m_Layer: 0
   m_Name: Player2
   m_TagString: Player2
@@ -97,7 +98,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8799009657197126101}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -153,6 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 3
+  m_movableRange: {x: 5, y: 2}
+  m_movableRangeOffset: {x: 0, y: 2}
 --- !u!114 &8799009657802785728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,3 +176,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &24084980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8799009657197126101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9c2643eda2d39c4d862c40058c05874, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_characters:
+  - {fileID: 8332056503171626781, guid: 5406a3512534749b0918fcf70d744fdf, type: 3}
+  - {fileID: 7845666121561171384, guid: c8e77daa804df4b9bacabcab4b178135, type: 3}
+  - {fileID: 89172088402251341, guid: 5ee91cdf142ca45d5ab3e38562dc9bce, type: 3}
+  - {fileID: 3638211644385119688, guid: 3d08402edf93645d9bfe82207fd257f5, type: 3}
