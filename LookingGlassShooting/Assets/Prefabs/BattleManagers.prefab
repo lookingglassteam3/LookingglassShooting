@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2674615841484698626}
   - component: {fileID: 2674615841484698639}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: BattleManagers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,6 +75,10 @@ MonoBehaviour:
     type: 3}
   Player2Prefab: {fileID: 8799009657197126101, guid: 683c611317e4abb4f9070b515c8cebb5,
     type: 3}
+  DamageAreaManagerPrefab: {fileID: 6373128604323160130, guid: 969e956e31140ce4fb9ba1866b11e3c2,
+    type: 3}
+  Player1InitialTransform: {fileID: 0}
+  Player2InitialTransform: {fileID: 0}
 --- !u!114 &2674615841484698626
 MonoBehaviour:
   m_ObjectHideFlags: 0
