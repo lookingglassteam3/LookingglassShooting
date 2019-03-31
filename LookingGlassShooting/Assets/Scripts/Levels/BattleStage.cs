@@ -12,6 +12,8 @@ public class BattleStage : MonoBehaviour
 
     [SerializeField] private GameObject Player1Prefab;
     [SerializeField] private GameObject Player2Prefab;
+
+    [SerializeField] private GameObject DamageAreaManagerPrefab;
     
     void Start()
     {
@@ -36,6 +38,9 @@ public class BattleStage : MonoBehaviour
             Players[i].Season = seasons[i];
             Players[i].Life = 100;
         }
+
+        var d = Instantiate(DamageAreaManagerPrefab);
+        d.GetComponent<DamageAreaManager>().Initialize(p1, p2);
 
         _timer.onTimeUp.AddListener(EventTimeUp);
         
