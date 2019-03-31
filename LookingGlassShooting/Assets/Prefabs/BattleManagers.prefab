@@ -79,6 +79,8 @@ MonoBehaviour:
     type: 3}
   Player1InitialTransform: {fileID: 0}
   Player2InitialTransform: {fileID: 0}
+  Player1Particle: {fileID: 0}
+  Player2Particle: {fileID: 0}
 --- !u!114 &2674615841484698626
 MonoBehaviour:
   m_ObjectHideFlags: 0

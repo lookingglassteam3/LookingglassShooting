@@ -14,8 +14,7 @@ namespace LooklingGlassShooting.Models
         public PlayerState status = PlayerState.Ready;
 
         public UnityEvent onKnockDown = new UnityEvent();
-        public class DamageEvent : UnityEvent<int>{}
-        public DamageEvent onDamage = new DamageEvent();
+        public UnityAction<int> onDamage;
 
         
         public Player(SeasonFormat season = SeasonFormat.Spring): base()
@@ -34,7 +33,7 @@ namespace LooklingGlassShooting.Models
             }
             else
             {
-                onDamage.Invoke(Life);
+                onDamage(Life);
             }
         }
     }
