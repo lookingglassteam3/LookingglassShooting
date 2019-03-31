@@ -49,45 +49,38 @@ public class Move : MonoBehaviour
         var vertical = 0.0f;
 
         vertical = Input.GetAxis("Vertical2");
-        horizontal = Input.GetAxis("Horizontal2");
+        horizontal = Input.GetAxis("Horizontal2") * -1;
 
         MoveGameObject(horizontal, vertical);
     }
 
     void MoveGameObject(float horizontal, float vertical)
     {
-        if (transform.position.x < -m_movableRange.x + m_movableRangeOffset.x)
+
+        Vector3 pos = transform.position + new Vector3(horizontal, vertical, 0) * m_speed * Time.deltaTime;
+
+        if (pos.x < -m_movableRange.x + m_movableRangeOffset.x)
         {
-            if(horizontal < 0.0f)
-            {
-                horizontal = 0.0f;
-            }
+            pos.x = -m_movableRange.x + m_movableRangeOffset.x;
         }
 
-        if(transform.position.x > m_movableRange.x + m_movableRangeOffset.x)
+
+        if (m_movableRange.x + m_movableRangeOffset.x < pos.x)
         {
-            if(horizontal > 0.0f)
-            {
-                horizontal = 0.0f;
-            }
+            pos.x = m_movableRange.x + m_movableRangeOffset.x;
         }
 
-        if (transform.position.y < -m_movableRange.y + m_movableRangeOffset.y)
+        if (m_movableRange.y + m_movableRangeOffset.y < pos.y)
         {
-            if(vertical < 0.0f)
-            {
-                vertical = 0.0f;
-            }
+            pos.y = m_movableRange.y + m_movableRangeOffset.y;
         }
 
-        if(transform.position.y > m_movableRange.y + m_movableRangeOffset.y)
+        if (pos.y < -m_movableRange.y + m_movableRangeOffset.y)
         {
-            if (vertical > 0.0f)
-            {
-                vertical = 0.0f;
-            }
+            pos.y = -m_movableRange.y + m_movableRangeOffset.y;
         }
 
-        transform.position += new Vector3(horizontal, vertical, 0) * m_speed * Time.deltaTime;
+
+        transform.position = pos;
     }
 }

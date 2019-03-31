@@ -154,8 +154,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_speed: 3
-  m_movableRange: {x: 5, y: 2}
-  m_movableRangeOffset: {x: 0, y: 2}
+  m_movableRange: {x: 1.6, y: 1}
+  m_movableRangeOffset: {x: 0, y: 5}
 --- !u!114 &8799009657802785728
 MonoBehaviour:
   m_ObjectHideFlags: 0

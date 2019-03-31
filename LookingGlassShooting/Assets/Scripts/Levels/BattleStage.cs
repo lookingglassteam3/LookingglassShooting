@@ -10,6 +10,8 @@ public class BattleStage : MonoBehaviour
     private Player[] Players;
     private RoundEffect _roundEffect;
 
+
+    public GameObject parent;
     [SerializeField] private GameObject Player1Prefab;
     [SerializeField] private GameObject Player2Prefab;
 
@@ -32,7 +34,8 @@ public class BattleStage : MonoBehaviour
         _timer.TimerSet((int)roundTime);
         _roundEffect = GetComponent<RoundEffect>();
 
-        var p1 = Instantiate(Player1Prefab,Player1InitialTransform.position,Player1InitialTransform.rotation);
+
+        var p1 = Instantiate(Player1Prefab,Player1InitialTransform.position, Player1InitialTransform.rotation);
         var p2 = Instantiate(Player2Prefab,Player2InitialTransform.position,Player2InitialTransform.rotation);
         Players = new []
         {
