@@ -3,7 +3,7 @@
 public class Shoot : MonoBehaviour
 {
     [SerializeField]
-    private BulletController m_bullet = null;
+    private GameObject m_bullet = null;
 
     private bool m_isPlayerOne = true;
 
@@ -33,7 +33,7 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            var bullet = Instantiate(m_bullet, transform.position, Quaternion.identity);
+            var bullet = Instantiate(m_bullet.gameObject, transform.position, Quaternion.identity);
             bullet.GetComponent<BulletController>().Initialize(m_bulletSpeed);
             return;
         }

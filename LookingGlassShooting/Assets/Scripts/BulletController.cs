@@ -1,29 +1,23 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private float m_speed;
-
     /// <summary>
     /// 単位は秒
     /// </summary>
     [SerializeField]
     private float m_lifeTime = 3.0f;
 
-    private void Start()
+    void Start()
     {
         StartCoroutine(Wait());
     }
 
     public void Initialize(float speed)
     {
-        m_speed = speed;
-    }
-
-    void Update()
-    {
-        transform.Translate(new Vector3(0, 0, m_speed * Time.deltaTime));
+        var rb = GetComponent<Rigidbody>();
+        rb.AddForce(new Vector3(0, 0, speed) * 100);
     }
 
     IEnumerator Wait()
