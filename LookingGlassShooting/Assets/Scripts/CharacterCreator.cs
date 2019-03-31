@@ -9,9 +9,9 @@ public class CharacterCreator : MonoBehaviour
     {
         var n = Random.Range(0, m_characters.Length);
 
-        var rotationY = 0;
+        var rotationY = 180;
         if (gameObject.tag == "Player2")
-            rotationY = 180;
+            rotationY = 0;
 
         Instantiate(m_characters[n],
             transform.position,

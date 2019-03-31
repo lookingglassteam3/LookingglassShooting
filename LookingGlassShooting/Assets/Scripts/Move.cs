@@ -11,7 +11,7 @@ public class Move : MonoBehaviour
     private Vector2 m_movableRange = new Vector2(5.0f, 2.0f);
 
     [SerializeField]
-    private Vector2 m_movableRangeOffset = new Vector2(0.0f, 2.0f);
+    private Vector2 m_movableRangeOffset = new Vector2(0.0f, 4.0f);
 
     void Start()
     {
@@ -61,6 +61,7 @@ public class Move : MonoBehaviour
             if(horizontal < 0.0f)
             {
                 horizontal = 0.0f;
+                //transform.position = new Vector3(m_movableRange.x - 1, transform.position.y, transform.position.z);
             }
         }
 
@@ -69,6 +70,7 @@ public class Move : MonoBehaviour
             if(horizontal > 0.0f)
             {
                 horizontal = 0.0f;
+                //transform.position = new Vector3(m_movableRange.x - 1, transform.position.y, transform.position.z);
             }
         }
 
@@ -88,6 +90,6 @@ public class Move : MonoBehaviour
             }
         }
 
-        transform.position += new Vector3(horizontal, vertical, 0) * m_speed * Time.deltaTime;
+        transform.position += new Vector3(horizontal * -1, vertical, 0) * m_speed * Time.deltaTime;
     }
 }
