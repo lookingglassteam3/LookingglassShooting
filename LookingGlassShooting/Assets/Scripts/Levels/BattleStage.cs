@@ -18,6 +18,10 @@ public class BattleStage : MonoBehaviour
 
     [SerializeField] private Transform Player1InitialTransform;
     [SerializeField] private Transform Player2InitialTransform;
+
+    [SerializeField] private ParticleController Player1Particle;
+    [SerializeField] private ParticleController Player2Particle;
+    
     void Start()
     {
         // 仮で夏vs冬
@@ -41,6 +45,8 @@ public class BattleStage : MonoBehaviour
             Players[i].Season = seasons[i];
             Players[i].Life = 100;
         }
+        Players[0].onDamage.AddListener(Player1Particle.Damage);
+        Players[1].onDamage.AddListener(Player2Particle.Damage);
 
         var d = Instantiate(DamageAreaManagerPrefab);
         d.GetComponent<DamageAreaManager>().Initialize(p1, p2);
