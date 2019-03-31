@@ -11,6 +11,7 @@ public class SceneController : MonoBehaviour
     {
         ShowCharacterSelect();
     }
+
     void Update()
     {
     }
