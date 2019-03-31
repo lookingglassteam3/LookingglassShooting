@@ -1,11 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using LooklingGlassShooting.Models;
 
 public enum Season
 {
     spring,summer,fall,winter
 }
+ enum PlayerNum
+{
+    player1,player2
+}
+
 public class ParticleController : MonoBehaviour
 {
     [SerializeField]
@@ -17,39 +23,109 @@ public class ParticleController : MonoBehaviour
     [SerializeField]
     ParticleSystem winter;
 
-    public Season own;
-    public Season enemy;
-    public int damage;
-    public float hSliderValue = 5.0f;
+    //public Season own;
+    private SeasonFormat ownSeason;
+    private SeasonFormat enemySeason;
+
+
+    private ParticleSetting own;
+    private ParticleSetting enemy;
+    
+    //public Season enemy;
+    [SerializeField]
+    private PlayerNum player;
+    public int Life;
+
+
+    private struct ParticleSetting
+    {
+        public ParticleSystem particle { get; }
+        public float max { get;  }
+        public SeasonFormat season { get; }
+        public ParticleSetting(SeasonFormat Season,ParticleSystem Particle, float Max)
+        {
+            particle = Particle;
+            max = Max;
+            season = Season;
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {
-        //spring.Play();
-        //fall.Play();
-        //winter.Play();
-        if (own == Season.spring || enemy == Season.spring)
-        {
-            spring.Play();
-        }
-        if (own == Season.summer || enemy == Season.summer)
-        {
-            summer.Play();
-        }
-        if (own == Season.fall || enemy == Season.fall)
-        {
-            fall.Play();
-        }
-        if (own == Season.winter || enemy == Season.winter)
-        {
-            winter.Play();
-        }
-    }
 
+        //GlobalRegistory.SetSeasons(SeasonFormat.Spring, SeasonFormat.Summer);
+        var PlayerSeasons = GlobalRegistory.GetSeasons();
+        if(player == PlayerNum.player1)
+        {
+            ownSeason = PlayerSeasons[0];
+            enemySeason = PlayerSeasons[1];
+        }
+        else
+        {
+            ownSeason = PlayerSeasons[1];
+            enemySeason = PlayerSeasons[0];
+        }
+
+        own  = SetSeason(ownSeason);
+        enemy = SetSeason(enemySeason);
+        own.particle.Play();
+        enemy.particle.Play();
+        
+    }
+    ParticleSetting SetSeason(SeasonFormat season)
+    {
+        ParticleSystem p;
+        ParticleSetting particleSetting;
+        switch (season)
+        {
+            case SeasonFormat.Spring:
+                {
+                    particleSetting = new ParticleSetting(season,spring,20);
+                    break;
+                }
+            case SeasonFormat.Summer:
+                {
+                    particleSetting = new ParticleSetting(season, summer, 5);
+                    break;
+                }
+            case SeasonFormat.Fall:
+                {
+                    particleSetting = new ParticleSetting(season, fall, 20);
+                    break;
+                }
+            case SeasonFormat.Winter:
+                {
+                    particleSetting = new ParticleSetting(season, winter, 20);
+                    break;
+                }
+            default:
+                {
+                    particleSetting = new ParticleSetting();
+                    break;
+                }
+        }
+        return particleSetting;
+        
+    }
     // Update is called once per frame
     void Update()
     {
-        var emission = spring.emission;
-        emission.rateOverTime = hSliderValue;
-            //= 0.1f;
+        calcEmission(Life);
+        //ここをとってくるようにする
+    }
+    void calcEmission(int ownLife)
+    {
+        var emission = own.particle.emission;
+        emission.rateOverTime = calcParticle(ownLife, own.max);
+        emission = enemy.particle.emission;
+        emission.rateOverTime = calcParticle(100 - ownLife, enemy.max);
+    }
+    private float calcParticle(int life, float max)
+    {
+        return life * max / 100.0f;
+    }
+    private float calcParticleSummer(int life)
+    {
+        return life * 5 / 100.0f;
     }
 }
