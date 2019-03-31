@@ -329,6 +329,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CountTime: 60
   IsEnabled: 0
+  onTimeUp:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &864032117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,6 +349,8 @@ MonoBehaviour:
   Player1Prefab: {fileID: 1701661953006741639, guid: 113d7b4578a2a9c48bf6e4f55effabc4,
     type: 3}
   Player2Prefab: {fileID: 8799009657197126101, guid: 683c611317e4abb4f9070b515c8cebb5,
+    type: 3}
+  DamageAreaManagerPrefab: {fileID: 6373128604323160130, guid: 969e956e31140ce4fb9ba1866b11e3c2,
     type: 3}
 --- !u!114 &864032118
 MonoBehaviour:
