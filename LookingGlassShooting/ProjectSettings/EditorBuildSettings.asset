@@ -4,5 +4,23 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/title.unity
+    guid: 68cedfda657bff246b6793929b776bf0
+  - enabled: 1
+    path: Assets/Scenes/machineselect.unity
+    guid: 69ec13941b1aeca4898dba2fbabb2cdf
+  - enabled: 1
+    path: Assets/Scenes/Battle.unity
+    guid: a930292809002664494bbcf05d6fa149
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: 87a72c5ae9ed1b847b5c0d6c131c4a2b
+  - enabled: 1
+    path: Assets/Scenes/ParticleTest.unity
+    guid: dec062bf9932129439c1c6f23a8786e7
+  - enabled: 1
+    path: Assets/Scenes/Player.unity
+    guid: 70b02522f96856741923e88efd382936
   m_configObjects: {}
