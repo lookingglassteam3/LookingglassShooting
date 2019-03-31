@@ -7,6 +7,12 @@ public class Move : MonoBehaviour
 
     private string m_tag;
 
+    [SerializeField]
+    private Vector2 m_movableRange = new Vector2(5.0f, 2.0f);
+
+    [SerializeField]
+    private Vector2 m_movableRangeOffset = new Vector2(0.0f, 2.0f);
+
     void Start()
     {
         m_tag = transform.tag;
@@ -50,6 +56,38 @@ public class Move : MonoBehaviour
 
     void MoveGameObject(float horizontal, float vertical)
     {
+        if (transform.position.x < -m_movableRange.x + m_movableRangeOffset.x)
+        {
+            if(horizontal < 0.0f)
+            {
+                horizontal = 0.0f;
+            }
+        }
+
+        if(transform.position.x > m_movableRange.x + m_movableRangeOffset.x)
+        {
+            if(horizontal > 0.0f)
+            {
+                horizontal = 0.0f;
+            }
+        }
+
+        if (transform.position.y < -m_movableRange.y + m_movableRangeOffset.y)
+        {
+            if(vertical < 0.0f)
+            {
+                vertical = 0.0f;
+            }
+        }
+
+        if(transform.position.y > m_movableRange.y + m_movableRangeOffset.y)
+        {
+            if (vertical > 0.0f)
+            {
+                vertical = 0.0f;
+            }
+        }
+
         transform.position += new Vector3(horizontal, vertical, 0) * m_speed * Time.deltaTime;
     }
 }
