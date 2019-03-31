@@ -25,7 +25,7 @@ public class Shoot : MonoBehaviour
             //if (Input.GetButtonDown("Fire1"))
             if (Input.GetKeyDown(KeyCode.Return))
             {
-                var bullet = Instantiate(m_bullet.gameObject, transform.position, Quaternion.identity);
+                var bullet = Instantiate(m_bullet, transform.position, Quaternion.identity);
                 bullet.GetComponent<BulletController>().Initialize(m_bulletSpeed);
             }
             return;
@@ -33,7 +33,7 @@ public class Shoot : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            var bullet = Instantiate(m_bullet.gameObject, transform.position, Quaternion.identity);
+            var bullet = Instantiate(m_bullet, transform.position, Quaternion.identity);
             bullet.GetComponent<BulletController>().Initialize(m_bulletSpeed);
             return;
         }
