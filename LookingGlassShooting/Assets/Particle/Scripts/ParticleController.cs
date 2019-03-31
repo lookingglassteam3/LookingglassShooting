@@ -70,6 +70,7 @@ public class ParticleController : MonoBehaviour
         enemy = SetSeason(enemySeason);
         own.particle.Play();
         enemy.particle.Play();
+        Damage(100);
         
     }
     ParticleSetting SetSeason(SeasonFormat season)
@@ -110,10 +111,10 @@ public class ParticleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        calcEmission(Life);
+        //calcEmission(Life);
         //ここをとってくるようにする
     }
-    void calcEmission(int ownLife)
+    public void Damage(int ownLife)
     {
         var emission = own.particle.emission;
         emission.rateOverTime = calcParticle(ownLife, own.max);
