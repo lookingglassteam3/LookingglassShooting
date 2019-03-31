@@ -5060,12 +5060,12 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198540354642502414, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
+    - target: {fileID: 198650571543110878, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
         type: 3}
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198650571543110878, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
+    - target: {fileID: 198707743391119632, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
         type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -5075,7 +5075,7 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 198707743391119632, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
+    - target: {fileID: 198540354642502414, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
         type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -9850,7 +9850,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1125795632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10044,7 +10044,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!198 &1576325475
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -10128,7 +10128,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 15
+      scalar: 10
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10613,7 +10613,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 300
     size3D: 0
     rotation3D: 0
     gravityModifier:
