@@ -1914,7 +1914,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1487411943 stripped
 Transform:
@@ -2427,37 +2427,37 @@ PrefabInstance:
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.6179246
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.82305557
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_TargetDisplay
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: near clip plane
-      value: 0.1
+      value: 33.221733
       objectReference: {fileID: 0}
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: far clip plane
-      value: 33.73739
+      value: 60.721733
       objectReference: {fileID: 0}
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 3590455070696074431, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
@@ -2477,37 +2477,37 @@ PrefabInstance:
     - target: {fileID: 3593317589700228387, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_BackGroundColor.r
-      value: 0.61960787
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593317589700228387, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_BackGroundColor.g
-      value: 0.8235294
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593317589700228387, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_BackGroundColor.b
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593317589700228387, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3593317589700228387, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: near clip plane
-      value: 0.1
+      value: 33.221733
       objectReference: {fileID: 0}
     - target: {fileID: 3593317589700228387, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: far clip plane
-      value: 33.73739
+      value: 60.721733
       objectReference: {fileID: 0}
     - target: {fileID: 3593317589700228387, guid: ee6536ab7838c4bc3aaa7e52048e7b9f,
         type: 3}
       propertyPath: field of view
-      value: 40
+      value: 14
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee6536ab7838c4bc3aaa7e52048e7b9f, type: 3}
@@ -3543,7 +3543,7 @@ Transform:
   - {fileID: 1713032953274917719}
   - {fileID: 791099954}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1713032953341159516
 PrefabInstance:
@@ -4843,7 +4843,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1713032954610347989}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: -1.22, z: -12.74}
+  m_LocalPosition: {x: -15, y: -1.22, z: -15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1713032953274917719}
