@@ -130,6 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 119490263}
   - component: {fileID: 119490262}
+  - component: {fileID: 119490264}
   m_Layer: 0
   m_Name: Scenecontroller
   m_TagString: Untagged
@@ -163,6 +164,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &119490264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 119490261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7976d99e8948d234f9d780f76835fb52, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1143200057
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -193,7 +206,7 @@ PrefabInstance:
     - target: {fileID: 20923855250696736, guid: e09e4534ef492fc4fb7003ed2bec1d99,
         type: 3}
       propertyPath: m_TargetDisplay
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 20923855250696736, guid: e09e4534ef492fc4fb7003ed2bec1d99,
         type: 3}
