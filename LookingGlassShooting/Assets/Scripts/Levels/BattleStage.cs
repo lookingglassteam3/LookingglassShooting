@@ -45,8 +45,8 @@ public class BattleStage : MonoBehaviour
             Players[i].Season = seasons[i];
             Players[i].Life = 100;
         }
-        Players[0].onDamage.AddListener(Player1Particle.Damage);
-        Players[1].onDamage.AddListener(Player2Particle.Damage);
+        Players[0].onDamage += Player1Particle.Damage;
+        Players[1].onDamage += Player2Particle.Damage;
 
         var d = Instantiate(DamageAreaManagerPrefab);
         d.GetComponent<DamageAreaManager>().Initialize(p1, p2);
@@ -78,6 +78,8 @@ public class BattleStage : MonoBehaviour
         {
             Players[i].status = PlayerState.Fight;
         }
+        Player1Particle.gameObject.SetActive(true);
+        Player2Particle.gameObject.SetActive(true);
     }
 
     public void EventKnockOut()
