@@ -15,6 +15,9 @@ public class BattleStage : MonoBehaviour
 
     [SerializeField] private GameObject DamageAreaManagerPrefab;
     
+
+    [SerializeField] private Transform Player1InitialTransform;
+    [SerializeField] private Transform Player2InitialTransform;
     void Start()
     {
         // 仮で夏vs冬
@@ -25,8 +28,8 @@ public class BattleStage : MonoBehaviour
         _timer.TimerSet((int)roundTime);
         _roundEffect = GetComponent<RoundEffect>();
 
-        var p1 = Instantiate(Player1Prefab);
-        var p2 = Instantiate(Player2Prefab);
+        var p1 = Instantiate(Player1Prefab,Player1InitialTransform.position,Player1InitialTransform.rotation);
+        var p2 = Instantiate(Player2Prefab,Player2InitialTransform.position,Player2InitialTransform.rotation);
         Players = new []
         {
             p1.transform.GetComponent<Player>(),

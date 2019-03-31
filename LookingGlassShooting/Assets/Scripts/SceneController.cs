@@ -35,6 +35,6 @@ public class SceneController : MonoBehaviour
 
     private void ShowBattle()
     {
-        SceneManager.LoadScene("Battle");
+        SceneManager.LoadScene("GameStage");
     }
 }
