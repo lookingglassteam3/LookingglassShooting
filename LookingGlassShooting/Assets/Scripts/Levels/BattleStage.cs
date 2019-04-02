@@ -49,7 +49,9 @@ public class BattleStage : MonoBehaviour
             Players[i].Life = 100;
         }
         Players[0].onDamage += Player1Particle.Damage;
+        Players[0].onDamage += _roundEffect.PlayDamageSound;
         Players[1].onDamage += Player2Particle.Damage;
+        Players[1].onDamage += _roundEffect.PlayDamageSound;
 
         var d = Instantiate(DamageAreaManagerPrefab);
         d.GetComponent<DamageAreaManager>().Initialize(p1, p2);
@@ -93,6 +95,7 @@ public class BattleStage : MonoBehaviour
         {
             if(Players[i].status != PlayerState.Down)
             {
+                _roundEffect.PlayDownSound();
                 Debug.Log("勝負あり！ " + i + " の勝ちだ！！！");
                 Judge(i);
             }

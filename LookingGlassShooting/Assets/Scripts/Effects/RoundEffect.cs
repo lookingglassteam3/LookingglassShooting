@@ -2,9 +2,12 @@
 
 public class RoundEffect : MonoBehaviour
 {
+    [SerializeField] private AudioSource m_SoundEffect;
+    [SerializeField] private AudioClip m_DamageSound;
+    [SerializeField] private AudioClip m_DownSound;
     void Start()
     {
-        
+        m_SoundEffect = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -40,5 +43,27 @@ public class RoundEffect : MonoBehaviour
     {
         // ToDo: 勝利エフェクトを出す
         Debug.Log("勝利エフェクト");
+    }
+
+    public void PlayDamageSound(int life)
+    {
+        if (m_SoundEffect != null && m_DamageSound != null && life > 0)
+        {
+            m_SoundEffect.clip = m_DamageSound;
+            m_SoundEffect.Play();
+        }else if (m_SoundEffect != null && m_DownSound != null && life < 0)
+        {
+            m_SoundEffect.clip = m_DownSound;
+            m_SoundEffect.Play();
+        }
+    }
+
+    public void PlayDownSound()
+    {
+        if (m_SoundEffect != null && m_DownSound != null)
+        {
+            m_SoundEffect.clip = m_DownSound;
+            m_SoundEffect.Play();
+        }
     }
 }
