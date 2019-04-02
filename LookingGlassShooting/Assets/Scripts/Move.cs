@@ -38,7 +38,7 @@ public class Move : MonoBehaviour
         var vertical = 0.0f;
 
         vertical = Input.GetAxis("Vertical");
-        horizontal = Input.GetAxis("Horizontal");
+        horizontal = Input.GetAxis("Horizontal") * -1;
 
         MoveGameObject(horizontal, vertical);
     }

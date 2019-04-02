@@ -45,4 +45,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_damageArea: {fileID: 4911230431953868173, guid: 6021ae2b20f1a9b4ebfaf465be8be022,
     type: 3}
-  m_damageAreasLength: 11
+  m_damageAreasLength: 15
