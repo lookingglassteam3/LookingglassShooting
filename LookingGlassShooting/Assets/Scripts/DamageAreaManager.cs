@@ -18,12 +18,12 @@ public class DamageAreaManager : MonoBehaviour
             var damageArea = Instantiate(m_damageArea,
                 new Vector3(0, 0, -m_damageAreasLength),
                 Quaternion.identity, transform);
-            damageArea.GetComponent<DamageArea>().Initialize(player1);
+            damageArea.GetComponent<DamageArea>().Initialize(player2);
 
             damageArea = Instantiate(m_damageArea,
                 new Vector3(0, 0, m_damageAreasLength),
                 Quaternion.identity, transform);
-            damageArea.GetComponent<DamageArea>().Initialize(player2);
+            damageArea.GetComponent<DamageArea>().Initialize(player1);
         }
     }
 }
