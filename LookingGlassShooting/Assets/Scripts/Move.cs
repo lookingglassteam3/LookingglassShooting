@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using LooklingGlassShooting.Models;
+using UnityEngine;
 
 public class Move : MonoBehaviour
 {
@@ -22,65 +23,46 @@ public class Move : MonoBehaviour
     {
         if (m_tag == "Player1")
         {
-            MovePlayerOne();
-            return;
+            MovePlayer(PlayerId.Player1);
         }
-
-        if (m_tag == "Player2")
+        else if (m_tag == "Player2")
         {
-            MovePlayerSecond();
+            MovePlayer(PlayerId.Player2);
         }
     }
 
-    void MovePlayerOne()
+    void MovePlayer(PlayerId id)
     {
         var horizontal = 0.0f;
         var vertical = 0.0f;
 
-        vertical = Input.GetAxis("Vertical");
-        horizontal = Input.GetAxis("Horizontal") * -1;
-
-        MoveGameObject(horizontal, vertical);
-    }
-
-    void MovePlayerSecond()
-    {
-        var horizontal = 0.0f;
-        var vertical = 0.0f;
-
-        vertical = Input.GetAxis("Vertical2");
-        horizontal = Input.GetAxis("Horizontal2") * -1;
-
+        if (id == PlayerId.Player1)
+        {
+            vertical = Input.GetAxis("Vertical");
+            horizontal = Input.GetAxis("Horizontal");
+        }
+        else if(id == PlayerId.Player2)
+        {
+            vertical = Input.GetAxis("Vertical2");
+            horizontal = Input.GetAxis("Horizontal2");
+        }
+        else
+        {
+            vertical = 0;
+            horizontal = 0;
+        }
         MoveGameObject(horizontal, vertical);
     }
 
     void MoveGameObject(float horizontal, float vertical)
     {
 
-        Vector3 pos = transform.position + new Vector3(horizontal, vertical, 0) * m_speed * Time.deltaTime;
-
-        if (pos.x < -m_movableRange.x + m_movableRangeOffset.x)
-        {
-            pos.x = -m_movableRange.x + m_movableRangeOffset.x;
-        }
-
-
-        if (m_movableRange.x + m_movableRangeOffset.x < pos.x)
-        {
-            pos.x = m_movableRange.x + m_movableRangeOffset.x;
-        }
-
-        if (m_movableRange.y + m_movableRangeOffset.y < pos.y)
-        {
-            pos.y = m_movableRange.y + m_movableRangeOffset.y;
-        }
-
-        if (pos.y < -m_movableRange.y + m_movableRangeOffset.y)
-        {
-            pos.y = -m_movableRange.y + m_movableRangeOffset.y;
-        }
-
-
-        transform.position = pos;
+        Vector3 pos = new Vector3(horizontal, vertical, 0) * m_speed * Time.deltaTime;
+        // posはローカル変換して動かす
+        var movePos = transform.position + transform.rotation * pos;
+        // 移動制限値でClampする
+        movePos.x = Mathf.Clamp(movePos.x, m_movableRangeOffset.x - m_movableRange.x,m_movableRangeOffset.x + m_movableRange.x);
+        movePos.y = Mathf.Clamp(movePos.y, m_movableRangeOffset.y - m_movableRange.y,m_movableRangeOffset.y + m_movableRange.y);
+        transform.position = movePos;
     }
 }
