@@ -6,7 +6,7 @@ public class DamageArea : MonoBehaviour
     private Player m_player;
 
     [SerializeField]
-    private int m_power = 10;
+    private int m_power = 1;
 
     public void Initialize(GameObject player)
     {
