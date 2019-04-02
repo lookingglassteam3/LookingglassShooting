@@ -236,6 +236,44 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4038522316507104317}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &640840934 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1770150239514932, guid: 3019d4eebe2593e428d7b9ccb096ceda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1916439489}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &640840938 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114865344359803568, guid: 3019d4eebe2593e428d7b9ccb096ceda,
+    type: 3}
+  m_PrefabInstance: {fileID: 1916439489}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640840934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de313519d88fe64f97b9e99db9c6c30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &640840940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 640840934}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b508ca10ef370ce42a24cad90e9ba484, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  holoplay: {fileID: 640840938}
+  start: -1.5
+  dip: -0.5
+  rise: 0.5
+  end: 2
+  blurSize: 1
+  horizontalOnly: 1
+  testFocus: 0
 --- !u!1 &853899700
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,6 +5037,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireworks gold
       objectReference: {fileID: 0}
+    - target: {fileID: 198033340270314858, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4896862696670266, guid: 2f31e2878cb699a4bbb1a79b81074a9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5054,11 +5097,6 @@ PrefabInstance:
     - target: {fileID: 4896862696670266, guid: 2f31e2878cb699a4bbb1a79b81074a9d, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
-      objectReference: {fileID: 0}
-    - target: {fileID: 198033340270314858, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198650571543110878, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
         type: 3}
@@ -9850,7 +9888,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1125795632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9858,7 +9896,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1125795631}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdff25fd61e633f49b41e5f41198e39e, type: 3}
   m_Name: 
@@ -9918,8 +9956,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ownParticle: {fileID: 375245150}
   enemyParticle: {fileID: 6852481526875528123}
-  player1: 0
-  player2: 2
+  player1: 3
+  player2: 0
 --- !u!4 &1213768829
 Transform:
   m_ObjectHideFlags: 0
@@ -14790,6 +14828,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Holoplay Capture
       objectReference: {fileID: 0}
+    - target: {fileID: 114865344359803568, guid: 3019d4eebe2593e428d7b9ccb096ceda,
+        type: 3}
+      propertyPath: quiltRT
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 114865344359803568, guid: 3019d4eebe2593e428d7b9ccb096ceda,
+        type: 3}
+      propertyPath: farClipFactor
+      value: 16.3
+      objectReference: {fileID: 0}
     - target: {fileID: 4858807375538342, guid: 3019d4eebe2593e428d7b9ccb096ceda, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -14833,16 +14881,6 @@ PrefabInstance:
     - target: {fileID: 4858807375538342, guid: 3019d4eebe2593e428d7b9ccb096ceda, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865344359803568, guid: 3019d4eebe2593e428d7b9ccb096ceda,
-        type: 3}
-      propertyPath: quiltRT
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 114865344359803568, guid: 3019d4eebe2593e428d7b9ccb096ceda,
-        type: 3}
-      propertyPath: farClipFactor
-      value: 16.3
       objectReference: {fileID: 0}
     - target: {fileID: 20959260662082832, guid: 3019d4eebe2593e428d7b9ccb096ceda,
         type: 3}
