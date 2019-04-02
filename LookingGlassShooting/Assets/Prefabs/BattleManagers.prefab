@@ -114,6 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 301084e0380064b4a97945b20c88e1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_EndBoard: {fileID: 0}
   m_SoundEffect: {fileID: 1624558404}
   m_DamageSound: {fileID: 8300000, guid: 4991fb3e568b6154d9e4e46c56eae719, type: 3}
   m_DownSound: {fileID: 8300000, guid: 55c9f2dcb0a04b04b90c40fbfe2ce99b, type: 3}

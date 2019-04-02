@@ -2,6 +2,9 @@
 
 public class RoundEffect : MonoBehaviour
 {
+
+    [SerializeField] private Animator m_EndBoard;
+
     [SerializeField] private AudioSource m_SoundEffect;
     [SerializeField] private AudioClip m_DamageSound;
     [SerializeField] private AudioClip m_DownSound;
@@ -43,6 +46,7 @@ public class RoundEffect : MonoBehaviour
     {
         // ToDo: 勝利エフェクトを出す
         Debug.Log("勝利エフェクト");
+        m_EndBoard.SetInteger("Winner",winner + 1);
     }
 
     public void PlayDamageSound(int life)

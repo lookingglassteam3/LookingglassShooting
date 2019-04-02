@@ -27,7 +27,7 @@ public class BattleStage : MonoBehaviour
     void Start()
     {
         // 仮で夏vs冬
-        GlobalRegistory.SetSeasons(SeasonFormat.Summer,SeasonFormat.Winter);
+        GlobalRegistory.SetSeasons(SeasonFormat.Spring,SeasonFormat.Winter);
 
         _timer = GetComponent<Timer>();
         roundTime = GlobalRegistory.GetRoundTime();
@@ -52,6 +52,9 @@ public class BattleStage : MonoBehaviour
         Players[0].onDamage += _roundEffect.PlayDamageSound;
         Players[1].onDamage += Player2Particle.Damage;
         Players[1].onDamage += _roundEffect.PlayDamageSound;
+
+        Players[0].onKnockDown.AddListener(EventKnockOut);
+        Players[1].onKnockDown.AddListener(EventKnockOut);
 
         var d = Instantiate(DamageAreaManagerPrefab);
         d.GetComponent<DamageAreaManager>().Initialize(p1, p2);
