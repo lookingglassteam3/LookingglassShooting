@@ -45,7 +45,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_bullet: {fileID: 3247819417172181912, guid: 69bf3c6a7ae43f44d80e485384b773bf,
     type: 3}
-  m_bulletSpeed: -10
+  m_bulletSpeed: 10
 --- !u!1 &1701661953006741639
 GameObject:
   m_ObjectHideFlags: 0

@@ -47,5 +47,10 @@ namespace LooklingGlassShooting.Models
     {
         Ready,Fight,Down,Win
     }
+
+    public enum PlayerId
+    {
+        Player1,Player2
+    }
 }
 
