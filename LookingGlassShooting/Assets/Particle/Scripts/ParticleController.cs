@@ -81,7 +81,7 @@ public class ParticleController : MonoBehaviour
         {
             case SeasonFormat.Spring:
                 {
-                    particleSetting = new ParticleSetting(season,spring,15);
+                    particleSetting = new ParticleSetting(season,spring,12);
                     break;
                 }
             case SeasonFormat.Summer:
@@ -91,12 +91,12 @@ public class ParticleController : MonoBehaviour
                 }
             case SeasonFormat.Fall:
                 {
-                    particleSetting = new ParticleSetting(season, fall, 15);
+                    particleSetting = new ParticleSetting(season, fall, 12);
                     break;
                 }
             case SeasonFormat.Winter:
                 {
-                    particleSetting = new ParticleSetting(season, winter, 15);
+                    particleSetting = new ParticleSetting(season, winter, 12);
                     break;
                 }
             default:
