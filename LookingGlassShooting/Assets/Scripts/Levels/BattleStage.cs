@@ -2,6 +2,7 @@
 using LooklingGlassShooting.Models;
 using UnityEngine;
 using UniRx;
+using UnityEngine.SceneManagement;
 
 public class BattleStage : MonoBehaviour
 {
@@ -23,14 +24,18 @@ public class BattleStage : MonoBehaviour
 
     [SerializeField] private ParticleController Player1Particle;
     [SerializeField] private ParticleController Player2Particle;
-    
+
+    [SerializeField] private AudioSource m_BGM;
+    private bool canReload = false;
     void Start()
     {
         // 仮で夏vs冬
         GlobalRegistory.SetSeasons(SeasonFormat.Spring,SeasonFormat.Winter);
 
+        canReload = false;
         _timer = GetComponent<Timer>();
         roundTime = GlobalRegistory.GetRoundTime();
+        roundTime = 60;
         _timer.TimerSet((int)roundTime);
         _roundEffect = GetComponent<RoundEffect>();
 
@@ -66,7 +71,12 @@ public class BattleStage : MonoBehaviour
 
     void Update()
     {
-        
+        if (canReload && Input.GetKeyDown(KeyCode.R))
+        {
+            if(m_BGM != null) m_BGM.Stop();
+            Scene loadScene = SceneManager.GetActiveScene();
+            SceneManager.LoadScene(loadScene.name);
+        }
     }
 
     public void EventReady()
@@ -82,6 +92,7 @@ public class BattleStage : MonoBehaviour
     {
         _roundEffect.ShowGo();
         _timer.TimerStart();
+        if(m_BGM != null) m_BGM.Play();
         for (int i = 0; i < 2; i++)
         {
             Players[i].status = PlayerState.Fight;
@@ -134,6 +145,7 @@ public class BattleStage : MonoBehaviour
 
     private void Judge(int i)
     {
+        canReload = true;
         _roundEffect.ShowWinnerEffect(i);
     }
 }
