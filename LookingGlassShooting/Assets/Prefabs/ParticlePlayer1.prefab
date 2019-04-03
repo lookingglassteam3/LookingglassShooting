@@ -115,7 +115,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -284,7 +284,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 100
+      scalar: 80
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -667,7 +667,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: -0, y: 0, z: 0}
-    m_Scale: {x: 20.90195, y: 9.624975, z: 1}
+    m_Scale: {x: 15, y: 5, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -4920,7 +4920,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5472,7 +5472,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: -0, y: 0, z: 0}
-    m_Scale: {x: 20.90195, y: 9.624975, z: 1}
+    m_Scale: {x: 15, y: 5, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -9672,7 +9672,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 4
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -10224,7 +10224,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: -0, y: 0, z: 0}
-    m_Scale: {x: 20.90195, y: 9.624975, z: 1}
+    m_Scale: {x: 15, y: 5, z: 1}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -14320,11 +14320,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fireworks gold
       objectReference: {fileID: 0}
-    - target: {fileID: 198033340270314858, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
-        type: 3}
-      propertyPath: playOnAwake
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 4896862696670266, guid: 2f31e2878cb699a4bbb1a79b81074a9d, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -14380,6 +14375,11 @@ PrefabInstance:
     - target: {fileID: 4896862696670266, guid: 2f31e2878cb699a4bbb1a79b81074a9d, type: 3}
       propertyPath: m_LocalScale.z
       value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 198033340270314858, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
+        type: 3}
+      propertyPath: playOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198650571543110878, guid: 2f31e2878cb699a4bbb1a79b81074a9d,
         type: 3}
